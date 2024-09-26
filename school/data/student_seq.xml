@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <!-- Sequence definition for Student Code -->
+        <record id="seq_student_code" model="ir.sequence">
+            <field name="name">Student Code</field>
+            <field name="code">student.master</field>
+            <field name="prefix">STU</field> <!-- Leave prefix blank or customize if needed -->
+            <field name="padding">4</field> <!-- No padding, starts at 1 -->
+            <field name="number_increment">1</field> <!-- Increment by 1 -->
+        </record>
+    </data>
+</odoo>

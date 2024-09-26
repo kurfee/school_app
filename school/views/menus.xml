@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Main Menu Item -->
+    <menuitem id="menu_school_root" name="School" sequence="1"
+              web_icon="school,static/description/icon.png"/>
+    <!--menu for School-->
+    <menuitem id="menu_student_dashboard"
+              name="Dashboard"
+              parent="menu_school_root"
+               sequence="100"/>
+
+
+    <menuitem id="menu_student_masters"
+              name="Masters"
+              parent="menu_school_root"
+              sequence="10"/>
+
+    <menuitem id="calculations_master"
+              name="Calculations"
+              parent="menu_school_root"
+              sequence="15"/>
+
+    <!-- Submenu for Masters  -->
+    <menuitem id="student_master"
+              name="Students"
+              parent="menu_student_masters"
+              action="action_students_master"
+              sequence="5"/>
+
+    <menuitem id="subjects_master"
+              name="Subjects"
+              parent="menu_student_masters"
+              action="action_subjects_master"
+              sequence="10"/>
+
+    <!-- Submenu for calculations  -->
+    <menuitem id="marks_calculation"
+              name="Marks Calculation"
+              parent="calculations_master"
+              action="action_exam_marks"
+              sequence="10"/>
+
+
+</odoo>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!--    tree views-->
+        <record id="student_master_tree" model="ir.ui.view">
+            <field name="name">Student Master View</field>
+            <field name="model">student.master</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="student_code"/>
+                    <field name="name"/>
+                    <field name="class_level"/>
+                    <field name="age"/>
+                    <field name="status"/>
+                    <field name="activity_ids" widget="list_activity"/>
+                    <field name="address"/>
+                    <field name="date_of_birth"/>
+                </tree>
+            </field>
+        </record>
+        <!--    Form views -->
+        <record id="student_master_form" model="ir.ui.view">
+            <field name="name">Student Master form View</field>
+            <field name="model">student.master</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" placeholder="Student Name"/>
+                            </h1>
+                        </div>
+                        <!-- This is the image displayed on the top right corner -->
+                        <div class="oe_right">
+                            <field name="image" widget="image" class="oe_avatar"
+                                   options="{'size': [90, 90]}"/>
+                        </div>
+                        <group>
+                            <group name="general_information">
+                                <field name="student_code" readonly="1"/>
+                                <field name="class_level"/>
+                                <field name="date_of_birth"/>
+                                <field name="age"/>
+                                <field name="status"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_ids" options="{'post_refresh': 'always'}"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="action_students_master" model="ir.actions.act_window">
+            <field name="name">Register a Student</field>
+            <field name="res_model">student.master</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new Student
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

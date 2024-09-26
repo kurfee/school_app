@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Subject Form View -->
+    <record id="view_subject_master_form" model="ir.ui.view">
+        <field name="name">subject.master.form</field>
+        <field name="model">subject.master</field>
+        <field name="arch" type="xml">
+            <form string="Subject">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="class_level"/>
+                        <field name="subject_code"/>
+                        <field name="marks"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- Subject Tree View -->
+    <record id="view_subject_master_tree" model="ir.ui.view">
+        <field name="name">subject.master.tree</field>
+        <field name="model">subject.master</field>
+        <field name="arch" type="xml">
+            <tree string="Subjects">
+                <field name="name"/>
+                <field name="class_level" string="Subject Name"/>
+                <field name="subject_code"/>
+                <field name="marks"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_subjects_master" model="ir.actions.act_window">
+        <field name="name">Subject</field>
+        <field name="res_model">subject.master</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new Subject
+            </p>
+        </field>
+    </record>
+</odoo>
