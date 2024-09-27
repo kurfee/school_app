@@ -27,18 +27,21 @@ class ExamMarks(models.Model):
 
                 # Calculate grade based on percentage
                 if record.percentage >= 90:
-                    record.grade = 'A'
+                    record.grade = 'Grade A'
                 elif record.percentage >= 75:
-                    record.grade = 'B'
-                elif record.percentage >= 50:
-                    record.grade = 'C'
-                elif record.percentage >= 35:
-                    record.grade = 'D'
+                    record.grade = 'Grade B'
+                elif record.percentage >= 60:
+                    record.grade = 'Grade C'
+                elif record.percentage >= 40:
+                    record.grade = 'Grade D'
+                elif record.percentage >= 1:
+                    record.grade = 'Fail'
                 else:
-                    record.grade = 'F'
+                    record.grade = '0'
             else:
                 record.percentage = 0.0
                 record.grade = 'N/A'
+
 
     @api.depends('marks_line_ids.subject_marks', 'marks_line_ids.scored_marks')
     def _compute_total_marks(self):
@@ -94,12 +97,16 @@ class ExamMarksLine(models.Model):
                     record.grade = 'Grade A'
                 elif record.percentage >= 75:
                     record.grade = 'Grade B'
-                elif record.percentage >= 50:
+                elif record.percentage >= 60:
                     record.grade = 'Grade C'
-                elif record.percentage >= 35:
+                elif record.percentage >= 40:
                     record.grade = 'Grade D'
+                elif record.percentage >= 1:
+                    record.grade = 'Fail'
+                elif record.percentage <= 0:
+                    record.grade = '0'
                 else:
-                    record.grade = ''
+                    record.grade = '0'
             else:
                 record.percentage = 0.0
                 record.grade = 'N/A'

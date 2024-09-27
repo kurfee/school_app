@@ -2,7 +2,7 @@
 <odoo>
 
     <!-- Main Menu Item -->
-    <menuitem id="menu_school_root" name="School" sequence="1"
+    <menuitem id="menu_school_root" name="Kalapa School" sequence="1"
               web_icon="school,static/description/icon.png"/>
     <!--menu for School-->
     <menuitem id="menu_student_dashboard"
