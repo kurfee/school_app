@@ -42,8 +42,8 @@
             <tree string="Exam Marks">
                 <field name="student_id"/>
                 <field name="class_level"/>
+                <field name="total_scored_marks" string="Your Score"/>
                 <field name="total_subject_marks"/>
-                <field name="total_scored_marks"/>
                 <field name="percentage"  widget="percent"/>
                 <field name="grade"/>
             </tree>
