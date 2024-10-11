@@ -8,7 +8,8 @@
     <menuitem id="menu_student_dashboard"
               name="Dashboard"
               parent="menu_school_root"
-               sequence="100"/>
+              action="action_owl_school_dashboard"
+               sequence="1"/>
 
 
     <menuitem id="menu_student_masters"

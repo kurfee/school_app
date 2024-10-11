@@ -4,6 +4,7 @@
     'summary': 'school system ',
     'category': 'Business',
     'license': 'LGPL-3',
+    'sequence': '-1',
     'version': '1.0',
     'depends': [
         'mail',
@@ -30,12 +31,11 @@
     'auto_installable': False,
     'images': ['static/description/icon.png'
                ],
-    'assests': {
+    'assets': {
         'web.assets_backend': [
-            # 'static/src/components/school_dashboard.js'
-            # 'static/src/components/school_dashboard.xml'
-            # 'static/src/components/**/*.scss'
-
+            'school/static/src/components/**/*.js',
+            'school/static/src/components/**/*.xml',
+            'school/static/src/components/**/*.scss',
         ],
     },
 }
