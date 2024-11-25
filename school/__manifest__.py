@@ -17,6 +17,8 @@
 
 
         'views/dashboard.xml',
+        'views/company_res.xml',
+        'views/sale_order.xml',
         'views/students_master.xml',
         'views/subjects_master.xml',
         'views/marks_calculation.xml',
